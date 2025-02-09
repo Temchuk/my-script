@@ -19,12 +19,7 @@
 // let a = Model.Selected ;
 // alert(a.Name);
 //
-// for (let i = 0 ; i <= a.length -1 ; i++ ){
-//     alert(a[i].Name);
-//     alert( i );
-// }
 //
-
 
 //
 // function traverseBlock(block) {
@@ -87,7 +82,7 @@ let selectedBlock = Model.Selected;
 if (selectedBlock instanceof TFurnBlock) {
     traverseBlock(selectedBlock);
 } else {
-    alert("vyberit!");
+    alert("vyberit!  виберіть");
 }
 traverseBlock();
 
