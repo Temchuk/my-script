@@ -36,6 +36,8 @@
 
 let s = 0;
 let n = 0;
+let newArrayS = [];
+let newArrayN = [];
 function traverseBlock(block) {
         if (!block) return; // Перевірка, щоб уникнути помилок
 
@@ -51,11 +53,12 @@ function traverseBlock(block) {
 
                 if( elem instanceof TFurnPanel ){
 
-                    alert(` ${elem.Name} ${elem} \n ${elem.ContourWidth} x ${elem.ContourHeight} `);
+                    // alert(` ${elem.Name} ${elem} \n ${elem.ContourWidth} x ${elem.ContourHeight} `);
                     n = n + 1;
                     let x = (elem.ContourWidth * elem.ContourHeight) /1000000 ;
-                    s =s + x;
-                    alert(x);
+                    s = s + x;
+                    newArrayS.push(x.toFixed(3)); // заогруглення до 3 після коми
+                    newArrayN.push(n);
 
 
 
@@ -81,14 +84,19 @@ if (selectedBlock instanceof TFurnBlock || selectedBlock instanceof TDraftBlock)
 } else {
         alert("vyberit!");
 }
-// traverseBlock(block);
 
 
 
-alert(n);
-alert(`площа : ${Math.round(s)} m\u00B2`);
+
+let Plosha = (`Plosha : ${s.toFixed(3)} m\u00B2`);
+
+let Kilkist = (newArrayN.map((num, k) => `${num}: ${newArrayS[k]}`).join("\n"));
+
+alert(`N=${n}\n${Plosha}\n${Kilkist}`)
 
 
 
-// let num = 39.000000037;
-// console.log(Math.round(num)); // 39
+
+
+// alert(Math.round(s));   // заокруглення до цілого
+// alert(newArrayS.join("\n")); // кожен елемент масиву з нового рядка
