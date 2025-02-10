@@ -90,9 +90,15 @@ if (selectedBlock instanceof TFurnBlock || selectedBlock instanceof TDraftBlock)
 
 let Plosha = (`Plosha : ${s.toFixed(3)} m\u00B2`);
 
-let Kilkist = (newArrayN.map((num, k) => `${num}: ${newArrayS[k]}`).join("\n"));
+let Kilkist = (newArrayN.map((num, k) => `${num} - ${newArrayS[k]} m\u00B2`).join("\n"));
 
-alert(`N=${n}\n${Plosha}\n${Kilkist}`)
+
+
+
+
+
+
+alert(`Kilkist = ${n}   -   ${Plosha} \n${Kilkist}`)
 
 
 
